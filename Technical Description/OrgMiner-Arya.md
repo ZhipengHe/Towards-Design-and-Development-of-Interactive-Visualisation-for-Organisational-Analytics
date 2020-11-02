@@ -223,6 +223,8 @@ Show the results on the top-right side of visualize page.
 
 #### Organizational Model View
 
+Organizational Model View uses D3.js to create a SVG tree-like model.
+
 ```javascript
 // visualize.html
 
@@ -252,14 +254,59 @@ function renderOrgM(nodeList, edgeList) {
 }
 ```
 
+`Waiter` is used to add event listener to each node and highlight the chosen node.
+
 ```javascript
 // arya-controller.js
 
 // class for handling all interactions
 class Waiter {
     // existing code omitted
+
+    attachSVGListeners(elemList, graph) {
+        var self = this;
+
+        // console.log(graph);
+        // search for all node elements in an svg graph and attach listeners
+        graph.selectAll(".node").selectAll(function() {
+            var nodeType = d3.select(this).
+                select("title").text().split(delim)[0];
+
+            switch(nodeType) {
+                case "group":
+                    self.attachGroupNodeListeners(
+                        elemList, d3.select(this));
+                    break;
+                case "resource":
+                    self.attachResourceNodeListeners(
+                        elemList, d3.select(this));
+                    break;
+                case "mode":
+                    self.attachModeNodeListeners(
+                        elemList, d3.select(this));
+                    break;
+                default:
+                    // do nothing
+            }
+        });
+    }
+
+    attachGroupNodeListeners(elemList, groupNode) {
+        // existing code omitted
+    }
+
+    attachResourceNodeListeners(elemList, node) {
+        // not used
+    }
+
+    attachModeNodeListeners(elemList, modeNode) {
+        // existing code omitted
+    }
+
 }
 ```
+
+`ModeTree` is used to initialise nodes for tree model. `ct`- Case Tree, `at` - Action Tree, `tt` - Time Tree
 
 ```javascript
 // arya-data.js
