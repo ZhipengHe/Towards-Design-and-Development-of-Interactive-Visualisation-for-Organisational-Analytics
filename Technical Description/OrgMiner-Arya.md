@@ -306,7 +306,7 @@ class Waiter {
 }
 ```
 
-`ModeTree` is used to initialise nodes for tree model. `ct`- Case Tree, `at` - Action Tree, `tt` - Time Tree
+`ModeTree` is used to initialise nodes for tree model. `ct`- case_type, `at` - activity_type, `tt` - time_type
 
 ```javascript
 // arya-data.js
