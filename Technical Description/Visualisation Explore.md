@@ -121,3 +121,6 @@ Here is an example by embdding the provious chart.
   src="http://127.0.0.1:5500/Technical%20Description/data/vega-lite_embed.html"
   style="width:100%; height:270px;"
 ></iframe>
+
+#### Vega-Embed (Advance)
+
