@@ -10,7 +10,7 @@ Model–view–controller (MVC) is a software design pattern commonly used for d
 
 The MVC design pattern also defines interactions between components, as we can see in the following diagram:
 
-![MVC diagram](Pic/mvc_diagram.png)
+![MVC diagram](pic/mvc_diagram.png)
 
 - The **model** stores data that is retrieved according to commands from the **controller**
 - The **view** generates output for the user based on changes in the **model**
