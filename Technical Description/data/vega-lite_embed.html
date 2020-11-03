@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Embedding Vega-Lite Test
+        </title>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    </head>
+    <body>
+        <div id="visualisation"></div>
+
+        <script type="text/javascript">
+            var vegaLiteCode = {    
+                "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                "data": {
+                    "url": "https://raw.githubusercontent.com/vega/vega/master/docs/data/cars.json"
+                },
+                "transform": [
+                    {
+                    "filter": {"field": "Cylinders", "lte": "5"}
+                    }
+                ],
+                "mark": "bar",
+                "encoding": {
+                    "x": {"field": "Cylinders", "type": "quantitative"},
+                    "y": {"field": "Acceleration", "type": "quantitative"},
+                    "size": {"value": 20}
+                }
+            };
+
+            vegaEmbed('#visualisation', vegaLiteCode);
+        </script>
+    </body>
+</html>
