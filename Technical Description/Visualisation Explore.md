@@ -122,5 +122,80 @@ Here is an example by embdding the provious chart.
   style="width:100%; height:270px;"
 ></iframe>
 
-#### Vega-Embed (Advance)
+#### Vega-Lite Theme Configuration
 
+`Config` object lists configuration properties of a visualization for creating a consistent theme.
+
+```json
+{
+    "config": {
+        // set background color
+        "background": "#f8f9fa",
+
+        "axis": {
+            // disable grid
+            "grid": false,
+
+            //
+        }
+    }
+}
+```
+
+#### Transform
+
+`transform` object is an array of objects describing transformations.
+
+![Transform](pic/Vega-Lite_Transform.png)
+
+```json
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "description": "A bar graph showing what activites consume what percentage of the day.",
+    "data": {
+        "values": [
+        {"Activity": "Sleeping", "Time": 8},
+        {"Activity": "Eating", "Time": 2},
+        {"Activity": "TV", "Time": 4},
+        {"Activity": "Work", "Time": 8},
+        {"Activity": "Exercise", "Time": 2}
+        ]
+    },
+    "transform": [
+        {"joinaggregate": [{"op": "sum", "field": "Time", "as": "TotalTime"}]},
+        {"calculate": "datum.Time/datum.TotalTime * 100", "as": "PercentOfTotal"}
+    ],
+    "height": {"step": 12},
+    "mark": "bar",
+    "encoding": {
+        "x": {
+        "field": "PercentOfTotal",
+        "type": "quantitative",
+        "title": "% of total Time"
+        },
+        "y": {"field": "Activity", "type": "nominal"}
+    }
+}
+```
+
+#### Layer
+
+![Vega-Lite Layer](pic/Vega-Lite_Layer.png)
+
+```json
+{
+    "layer": [{
+        "mark": "bar"
+    }, {
+        "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "dx": 3
+        },
+        "encoding": {
+            "text": {"field": "PercentOfTotal", "type": "quantitative", "format": ".3"}
+        }
+    }]
+}
+```
