@@ -21,6 +21,10 @@ Comparing with D3.js, Vega:
 - Enable programmatic generation of visualizations.
 - Improve performance and platform flexibility.
 
+### [3] Config about the view for Vega
+
+Need to be attention next week
+
 ## 3. Vega-Lite
 
 ### [1] Different from Vega
