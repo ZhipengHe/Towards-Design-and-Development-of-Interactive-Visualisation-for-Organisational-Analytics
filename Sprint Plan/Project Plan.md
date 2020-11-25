@@ -18,6 +18,8 @@
 
 ### Task 1: Visualisation of Orgnisational Analytics
 
+This picture will be replaced by a diagram later.
+
 ![Meeting Draft](pic/Meeting_Draft_20201125.jpg)
 
 - Design the back-end framework for Orgnisational Analytics
@@ -26,14 +28,15 @@
 
 ### Task 2: Improve visualisation of Organisational View
 
-Explore `d3.js` to find a better way to visualise tree model.
+- Explore `d3.js` to find a better way to visualise tree model.
 
 Related link:
 [Interactive Tree Diagram (D3v3) / Aaron Kyle Dennis / Observable (observablehq.com)](https://observablehq.com/@aaronkyle/interactive-tree-diagram-d3v3)
 
-
 ### Future Task: Explore Organizational Model Markup Language
+
+- Explore the possible of using unified data structure to store organizational model data
 
 Check this paper for more info:
 
-> Song, M., & Van der Aalst, W. M. (2008). Towards comprehensive support for organizational mining. *Decision Support Systems, 46*(1), 300-317.
+> Song, M., & Van der Aalst, W. M. (2008). Towards comprehensive support for organizational mining. *Decision Support Systems, 46*(1), 300-317. [https://doi.org/10.1016/j.dss.2008.07.002](https://doi.org/10.1016/j.dss.2008.07.002)
