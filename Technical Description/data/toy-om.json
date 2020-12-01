@@ -1,0 +1,151 @@
+{
+    "group|::|0": {
+        "_type": "node",
+        "label": "Group 0",
+        "_class": "group"
+    },
+    "resource|::|Pete": {
+        "_type": "node",
+        "label": "Pete",
+        "_class": "resource"
+    },
+    "group|::|0 -> resource|::|Pete": {
+        "_type": "edge",
+        "source": "group|::|0",
+        "target": "resource|::|Pete",
+        "_class": "group-resource"
+    },
+    "resource|::|Bob": {
+        "_type": "node",
+        "label": "Bob",
+        "_class": "resource"
+    },
+    "group|::|0 -> resource|::|Bob": {
+        "_type": "edge",
+        "source": "group|::|0",
+        "target": "resource|::|Bob",
+        "_class": "group-resource"
+    },
+    "mode|::|(CT.VIP,AT.register,TT.morning)": {
+        "_type": "node",
+        "label": "CT.VIP, AT.register, TT.morning",
+        "_class": "mode"
+    },
+    "group|::|0 -> mode|::|(CT.VIP,AT.register,TT.morning)": {
+        "_type": "edge",
+        "_class": "group-mode"
+    },
+    "mode|::|(CT.normal,AT.register,TT.afternoon)": {
+        "_type": "node",
+        "label": "CT.normal, AT.register, TT.afternoon",
+        "_class": "mode"
+    },
+    "group|::|0 -> mode|::|(CT.normal,AT.register,TT.afternoon)": {
+        "_type": "edge",
+        "_class": "group-mode"
+    },
+    "group|::|1": {
+        "_type": "node",
+        "label": "Group 1",
+        "_class": "group"
+    },
+    "resource|::|John": {
+        "_type": "node",
+        "label": "John",
+        "_class": "resource"
+    },
+    "group|::|1 -> resource|::|John": {
+        "_type": "edge",
+        "source": "group|::|1",
+        "target": "resource|::|John",
+        "_class": "group-resource"
+    },
+    "resource|::|Sue": {
+        "_type": "node",
+        "label": "Sue",
+        "_class": "resource"
+    },
+    "group|::|1 -> resource|::|Sue": {
+        "_type": "edge",
+        "source": "group|::|1",
+        "target": "resource|::|Sue",
+        "_class": "group-resource"
+    },
+    "mode|::|(CT.normal,AT.check,TT.morning)": {
+        "_type": "node",
+        "label": "CT.normal, AT.check, TT.morning",
+        "_class": "mode"
+    },
+    "group|::|1 -> mode|::|(CT.normal,AT.check,TT.morning)": {
+        "_type": "edge",
+        "_class": "group-mode"
+    },
+    "mode|::|(CT.normal,AT.decide,TT.morning)": {
+        "_type": "node",
+        "label": "CT.normal, AT.decide, TT.morning",
+        "_class": "mode"
+    },
+    "group|::|1 -> mode|::|(CT.normal,AT.decide,TT.morning)": {
+        "_type": "edge",
+        "_class": "group-mode"
+    },
+    "group|::|2": {
+        "_type": "node",
+        "label": "Group 2",
+        "_class": "group"
+    },
+    "resource|::|Mary": {
+        "_type": "node",
+        "label": "Mary",
+        "_class": "resource"
+    },
+    "group|::|2 -> resource|::|Mary": {
+        "_type": "edge",
+        "source": "group|::|2",
+        "target": "resource|::|Mary",
+        "_class": "group-resource"
+    },
+    "mode|::|(CT.VIP,AT.check,TT.afternoon)": {
+        "_type": "node",
+        "label": "CT.VIP, AT.check, TT.afternoon",
+        "_class": "mode"
+    },
+    "group|::|2 -> mode|::|(CT.VIP,AT.check,TT.afternoon)": {
+        "_type": "edge",
+        "_class": "group-mode"
+    },
+    "mode|::|(CT.VIP,AT.decide,TT.afternoon)": {
+        "_type": "node",
+        "label": "CT.VIP, AT.decide, TT.afternoon",
+        "_class": "mode"
+    },
+    "group|::|2 -> mode|::|(CT.VIP,AT.decide,TT.afternoon)": {
+        "_type": "edge",
+        "_class": "group-mode"
+    },
+    "group|::|3": {
+        "_type": "node",
+        "label": "Group 3",
+        "_class": "group"
+    },
+    "resource|::|Ann": {
+        "_type": "node",
+        "label": "Ann",
+        "_class": "resource"
+    },
+    "group|::|3 -> resource|::|Ann": {
+        "_type": "edge",
+        "source": "group|::|3",
+        "target": "resource|::|Ann",
+        "_class": "group-resource"
+    },
+    "mode|::|(CT.normal,AT.contact,TT.afternoon)": {
+        "_type": "node",
+        "label": "CT.normal, AT.contact, TT.afternoon",
+        "_class": "mode"
+    },
+    "group|::|3 -> mode|::|(CT.normal,AT.contact,TT.afternoon)": {
+        "_type": "edge",
+        "_class": "group-mode"
+    }
+}
