@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Plan.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="project-plan">Project Plan</h1>
+<h2 id="main-task---orgminer-20-visualisation-imporove">Main Task - OrgMiner 2.0 visualisation imporove</h2>
+<p>[1] <strong>Get familiar and fix Errors</strong></p>
+<p>[2] <strong>Interactive User Interface</strong></p>
+<ul>
+<li>interactive user interface</li>
+<li>provision of user-centric explanations</li>
+</ul>
+<p>[3] <strong>Improve visualisation of Organisational View</strong></p>
+<ul>
+<li>Visualisation of discrepancy</li>
+<li>Explanation via diagnosis</li>
+</ul>
+<h2 id="20201125-update">2020/11/25 Update</h2>
+<h3 id="task-1-visualisation-of-orgnisational-analytics">Task 1: Visualisation of Orgnisational Analytics</h3>
+<p>This picture will be replaced by a diagram later.</p>
+<p><img src="pic/Meeting_Draft_20201125.jpg" alt="Meeting Draft"></p>
+<ul>
+<li>Design the back-end framework for Orgnisational Analytics</li>
+<li>Modularise the process of generating vega-lite spec (JSON)</li>
+<li>Apply suitable data structure (avoid ad-hoc or hard=coding)</li>
+</ul>
+<h3 id="task-2-improve-visualisation-of-organisational-view">Task 2: Improve visualisation of Organisational View</h3>
+<ul>
+<li>Explore <code>d3.js</code> to find a better way to visualise tree model.</li>
+</ul>
+<p>Related link:
+<a href="https://observablehq.com/@aaronkyle/interactive-tree-diagram-d3v3">Interactive Tree Diagram (D3v3) / Aaron Kyle Dennis / Observable (observablehq.com)</a></p>
+<h3 id="future-task-explore-organizational-model-markup-language">Future Task: Explore Organizational Model Markup Language</h3>
+<ul>
+<li>Explore the possible of using unified data structure to store organizational model data</li>
+</ul>
+<p>Check this paper for more info:</p>
+<blockquote>
+<p>Song, M., &amp; Van der Aalst, W. M. (2008). Towards comprehensive support for organizational mining. <em>Decision Support Systems, 46</em>(1), 300-317. <a href="https://doi.org/10.1016/j.dss.2008.07.002">https://doi.org/10.1016/j.dss.2008.07.002</a></p>
+</blockquote>
+<h2 id="20201207-update">2020/12/07 Update</h2>
+<h3 id="scope-of-the-visualisation-in-organisational-mining">Scope of the visualisation in Organisational Mining</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data Analytic</th>
+<th style="text-align:center">=&gt;</th>
+<th style="text-align:center">Visual Analytic</th>
+<th style="text-align:center">=&gt;</th>
+<th style="text-align:center">Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Organisational Mining</td>
+<td style="text-align:center">requirements</td>
+<td style="text-align:center">Design Principle</td>
+<td style="text-align:center">guide</td>
+<td style="text-align:center">Vega</td>
+</tr>
+<tr>
+<td style="text-align:center">Organisational Analytics</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Techniques</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Vega-Lite</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Matplotlib</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Seaborn</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Altair</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Plotly</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Facets</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-analytic">Data Analytic</h3>
+<p>Data Analytic should be the main part of research in Orgnasational Mining. It would provide requirements for Visual Analytic.</p>
+<p>For my VRES and Honours study, this part will be processed by Roy.</p>
+<h3 id="visual-analytic">Visual Analytic **</h3>
+<p>Visual Analytic will combine current <strong>design principle</strong> and <strong>techniques</strong> with requirements from Data Analytic as new specifications to guide the design and develop visualisation tools.</p>
+<h4 id="design-principle">Design Principle</h4>
+<p>Design Principle - fundamental pieces of advice</p>
+<p>The start points of Visual Analytic for Organisational Analytic are:</p>
+<blockquote>
+<p>Keim, D., Andrienko, G., Fekete, J. D., Görg, C., Kohlhammer, J., &amp; Melançon, G. (2008). Visual analytics: Definition, process, and challenges. In Information visualization (pp. 154-175). Springer, Berlin, Heidelberg. <a href="https://doi.org/10.1007/978-3-540-70956-5_7">https://doi.org/10.1007/978-3-540-70956-5_7</a></p>
+</blockquote>
+<blockquote>
+<p>Keim D.A., Mansmann F., Schneidewind J., Thomas J., Ziegler H. (2008) Visual Analytics: Scope and Challenges. In: Simoff S.J., Böhlen M.H., Mazeika A. (eds) Visual Data Mining. Lecture Notes in Computer Science, vol 4404. Springer, Berlin, Heidelberg. <a href="https://doi.org/10.1007/978-3-540-71080-6_6">https://doi.org/10.1007/978-3-540-71080-6_6</a></p>
+</blockquote>
+<h4 id="method-forward-referencing">Method: Forward Referencing</h4>
+<p>The explaination of Forward Referencing can be found in this <a href="https://libguides.fau.edu/c.php?g=325509&amp;p=2182112">link</a>.</p>
+<p>Detail steps:</p>
+<ol>
+<li><strong>Search</strong>: From the start points (the previous articles), search all the articles which cited the original articles. Numbers: more than 1000</li>
+<li><strong>Filter</strong>: By years (after 2015), by authors (or teams), etc. Numbers: 200-300</li>
+<li><strong>Select</strong>: Read title, abstruct, introduction and conclusion of each article to find the relevant articles. Numbers: 20-30</li>
+</ol>
+<h3 id="tools">Tools **</h3>
+<p>Use specifications from Visual Analytic to judge which type of visualisation tool is fittest for Organisational Analytic.</p>
+<p>Tools we know:</p>
+<p>From High Level to Low Level</p>
+<ul>
+<li>Facets</li>
+<li>Vega, Vega-Lite, Seaborn, Plotly</li>
+<li>Matplotlib, d3.js</li>
+</ul>
+<h3 id="target-of-project">Target of project</h3>
+<p>BPM 2021 Demo (finish before June 2021)</p>
+<h3 id="task-for-next-period">Task for next period</h3>
+<ol>
+<li>Summary for Design Principle</li>
+<li>Compare the rest of visualisation tools</li>
+<li>Draw the data flow chart for Arya Back-End</li>
+</ol>
+<h3 id="meeting-draft">Meeting Draft</h3>
+<p><img src="pic/Meeting_Draft_20201207.jpg" alt="Meeting Draft"></p>
+
+</body>
+</html>
